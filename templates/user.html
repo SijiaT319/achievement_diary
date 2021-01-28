@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div style="text-align:right">
+        <a href="/user/{{username}}/create_diary"><img src="https://img.icons8.com/wired/344/create-new.png" alt="create icon" height="70" width="70"></a>
+    </div>  
+<br>
+<br>
+
+    {% for id,diary in diaries.items() %}
+        {% for date,content in diary.items() %}
+
+            <div class="container" >
+                <img src="https://picsum.photos/300/300" alt="picsum">
+                <p>{{date}}</p>
+                <p style="white-space:pre">{{content}}</p>
+                <br>
+                <p><font color="gray"">---------------------------------------------------</font></p>
+                <br>
+            </div>
+    
+        {% endfor %}
+    {% endfor %}
+    
+    {% if error%}
+    <h2 class="text-center " ><b>{{error}}</b> </h2>
+    {% endif %}
+
+
+{% endblock %}

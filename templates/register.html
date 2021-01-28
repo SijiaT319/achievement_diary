@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="text-center" style="font-family:courier">Welcome to Achievement Diary. I can't wait to meet you.</h2>
+<br>    
+<form class="text-center" method="post" action="">        
+
+    <input type="text" name="username" placeholder="How can I call you?" value="{{request.form.username}}" >
+    <br>
+    {% if un_error %}
+    <h7 class="error text-center" ><strong>Error:</strong> {{un_error}}</h7>
+    {% endif %}
+    <br>
+    <input type="password" name="password" placeholder="Password" value="{{request.form.password}}">
+    <br>
+    {% if pw_error %}
+    <h7 class="error text-center" ><strong>Error:</strong> {{pw_error}}</h7>
+    {% endif %}
+    <br>
+    <input class="" type="submit" value="Save">
+</form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div align="center"><img style="border-radius:200px" src="https://placeimg.com/250/250/animals" alt="animal" ></div>
+<br>
+<br>
+<form class="text-center" method="post" action="">        
+    <textarea name="diary content" placeholder="Tell me tell me, what have you achieved today! " value="" > </textarea>
+    <br>
+    <br>
+    <input class="" type="submit" onclick="new_diary_alert()" value="Save">
+</form>
+<br>
+{% if error%}
+<h5 class="text-center " >{{error}} </h5>
+{% endif %}
+
+
+
+{% endblock %}
